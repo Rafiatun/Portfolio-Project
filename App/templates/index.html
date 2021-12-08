@@ -1,0 +1,228 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'style/style.css' %}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+     
+    <title>Hello, world!</title>
+  </head>
+  <body>
+       <!----Base Template-->
+        <!---------Introduction-->
+        <div class="Introduction">
+            <div class="header">
+                <!--Content before waves-->
+                <div class="inner-header flex">
+                    <h1>I am John Dever & This is my portfolio....</h1>
+                    
+                </div>
+                
+                <!--Waves Container-->
+                <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+                </svg>
+                </div>
+                <!--Waves end-->
+                
+            </div>
+
+       </div>
+       <div class="container" id="about">
+           <div class="box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{% static 'images/man.png' %}">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>About Me</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris nunc congue nisi vitae suscipit tellus mauris a diam.</p>
+                    </div>
+                </div>
+                <div class="skills">
+                <div class="row">
+                    {% for skill in skill %}
+                    <div class="col-3 col-sm-2 col-md-3">
+                        <img src="{{ skill.icon.url }}" width="100px" height="100px" style="margin-top:30px;padding-left:20px;">
+                    </div>  
+                    {% endfor %}
+                </div>
+                </div>
+           </div>
+       </div>
+
+       <br>
+       
+
+       <div class="projects">
+        <h1 
+        style="text-align: center;margin-top: 50px;padding-bottom: 50px;">Featured Projects</h1>
+        <div class="container">
+            <div class="row">
+                {% for project in project %}
+                <div class="col-md-4">
+                    <div class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">             
+                         <div class="card mb-3">
+                             <img src="{{ project.project_img.url }}" width="60%" height="100" style="margin-top:30px;padding-left: 80px;">
+                             <div class="card-body">
+                         
+                                   <a href="{{ project.project_link }}"><h4> {{ project.project_name }}</h4></a>
+                             
+                               <p class="card-text">{{ project.tools }}</p>
+                             </div>
+                             
+                           </div>
+                           
+                        
+                    </div>
+                </div>
+                {% endfor %}
+              
+            </div>
+        </div>
+    </div>
+    <!----container-->
+    <div class="projects">
+        <h1 
+        style="text-align: center;margin-top: 50px;padding-bottom: 50px;">Featured Projects</h1>
+        <div class="container">
+            <div class="row">
+                {% for project in project %}
+                <div class="col-md-4">
+                    <div class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">             
+                         <div class="card mb-3">
+                             <img src="{{ project.project_img.url }}" width="60%" height="100" style="margin-top:30px;padding-left: 80px;">
+                             <div class="card-body">
+                         
+                                   <a href="{{ project.project_link }}"><h4> {{ project.project_name }}</h4></a>
+                             
+                               <p class="card-text">{{ project.tools }}</p>
+                             </div>
+                             
+                           </div>
+                           
+                        
+                    </div>
+                </div>
+                {% endfor %}
+              
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <section class="deneb_cta">
+        <div class="container">
+            <div class="cta_wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="cta_content">
+                            <h3>Have Any Project in Mind ?</h3>
+                            <p>Curabitur libero eros, efficitur sit amet sodales tincidunt, aliquet et leo sed ut nibh feugiat, auctor enim quis.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="button_box">
+                            <a href="#" class="btn btn-warning">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="deneb_footer">
+        <div class="widget_wrapper" style="background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="widget widegt_about">
+                            <div class="widget_title">
+                                <img src="assets/images/logo_1.png" class="img-fluid" alt="">
+                            </div>
+                            <p>Quisque orci nisl, viverra et sem ac, tincidunt egestas massa. Morbi est arcu, hendrerit ac vehicula condimentum, euismod nec tortor praesent consequat urna.</p>
+                            <ul class="social">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="widget widget_link">
+                            <div class="widget_title">
+                                <h4>Links</h4>
+                            </div>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="widget widget_contact">
+                            <div class="widget_title">
+                                <h4>Contact Us</h4>
+                            </div>
+                            <div class="contact_info">
+                                <div class="single_info">
+                                    <div class="icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="info">
+                                        <p><a href="tel:+919246147999">1800-121-3637</a></p>
+                                        <p><a href="tel:+919246147999">+91 924-614-7999</a></p>
+                                    </div>
+                                </div>
+                                <div class="single_info">
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="info">
+                                        <p><a href="mailto:info@deneb.com">info@deneb.com</a></p>
+                                        <p><a href="mailto:services@deneb.com">services@deneb.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="single_info">
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info">
+                                        <p>125, Park street aven, Brocklyn,<span>Newyork.</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+      <!-- End of .container -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+  </body>
+</html>
